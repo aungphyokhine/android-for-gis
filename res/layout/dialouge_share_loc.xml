@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <android.support.v7.widget.CardView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/linearLayout1" >
+    
+    <LinearLayout
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/abc_text_size_subhead_material" >
+
+                    <ImageView
+                        android:id="@+id/imageMyloc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/abc_action_bar_subtitle_bottom_margin_material"
+                        android:src="@drawable/ic_room_black_36dp" />
+
+                    <TextView
+                        android:id="@+id/textMyloc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.63"
+                        android:paddingLeft="@dimen/abc_action_bar_overflow_padding_start_material"
+                        android:text="My Location"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <ImageView
+                        android:id="@+id/imageGotohome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/abc_action_bar_subtitle_bottom_margin_material"
+                        android:src="@drawable/ic_home_black_36dp" />
+        </LinearLayout>
+        
+               
+                 
+    </android.support.v7.widget.CardView>
+     
+
+
+    <fragment
+   android:id="@+id/map"
+   android:name="com.google.android.gms.maps.MapFragment"
+   android:layout_width="match_parent"
+   android:layout_height="fill_parent"/>
+
+   
+
+   
+
+</RelativeLayout>
+

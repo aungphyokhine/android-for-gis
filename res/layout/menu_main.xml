@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_record"
+        android:orderInCategory="100"
+        android:title="Add">
+    </item>
+
+    <item
+        android:id="@+id/toolbar"
+        android:icon="@drawable/ic_action_sync"
+        android:orderInCategory="200"
+        android:title="Search">
+    </item>
+
+    <item
+        android:id="@+id/action_user"
+        android:icon="@drawable/ic_action_friends"
+        android:orderInCategory="300"
+        android:title="User">
+    </item>
+</menu>

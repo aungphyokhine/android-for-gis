@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ <android.support.v7.widget.CardView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/abc_text_size_subhead_material" >
+
+                    <ImageView
+                        android:id="@+id/imageViewHistroy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/abc_action_bar_subtitle_bottom_margin_material"
+                        android:src="@drawable/ic_history_black_36dp" />
+
+                    <TextView
+                        android:id="@+id/textViewviewhistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.63"
+                        android:text="My Trips"
+                        android:paddingLeft="@dimen/abc_action_bar_overflow_padding_start_material"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <ImageView
+                        android:id="@+id/imageViewFindFriends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/abc_action_bar_subtitle_bottom_margin_material"
+                        android:src="@drawable/ic_accessibility_black_36dp" />
+
+                </LinearLayout>
+   </android.support.v7.widget.CardView>
+
+   
+        <ViewFlipper
+            android:id="@+id/ViewFlipper01"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="470dp"
+                android:orientation="vertical"
+                android:padding="@dimen/abc_text_size_headline_material" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/abc_dialog_list_padding_vertical_material"
+                    android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_settings_backup_restore_black_36dp" />
+
+                    <LinearLayout
+                        android:paddingLeft="@dimen/abc_action_bar_overflow_padding_start_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.27"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Record Trip"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <TextView
+                            android:id="@+id/TextViewRecordOnOff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Off"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                    </LinearLayout>
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/toggleRecord"
+                        android:layout_width="53dp"
+                        android:layout_height="30dp"
+                        android:gravity="right"
+                        toggle:borderWidth="1dp"
+                        toggle:offBorderColor="#33b5e5"
+                        toggle:offColor="#ddd"
+                        toggle:onColor="#33b5e5"
+                        toggle:spotColor="#fff" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/abc_dialog_list_padding_vertical_material"
+                    android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material" >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cached_black_36dp" />
+
+                    <LinearLayout
+                        android:paddingLeft="@dimen/abc_action_bar_overflow_padding_start_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.27"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sync With Cloud"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <TextView
+                            android:id="@+id/TextViewSyncOnOff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Off"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                    </LinearLayout>
+
+                    <com.zcw.togglebutton.ToggleButton
+                        android:id="@+id/toggleSync"
+                        android:layout_width="53dp"
+                        android:layout_height="30dp"
+                        android:gravity="right"
+                        toggle:borderWidth="1dp"
+                        toggle:offBorderColor="#33b5e5"
+                        toggle:offColor="#ddd"
+                        toggle:onColor="#33b5e5"
+                        toggle:spotColor="#fff" />
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                     android:gravity="center_vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/abc_action_bar_subtitle_bottom_margin_material"
+                        android:paddingLeft="@dimen/abc_action_bar_overflow_padding_start_material"
+                        android:paddingTop="@dimen/abc_action_bar_progress_bar_size" >
+
+                        <TextView
+                          
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Repeat For Record"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <TextView
+                            android:id="@+id/textViewRecordTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Small Text"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        <SeekBar
+                            android:id="@+id/seekBarRecord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+
+					<LinearLayout
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:layout_weight="1"
+					    android:orientation="vertical"
+					    android:paddingLeft="@dimen/abc_action_bar_overflow_padding_start_material" >
+
+                        <TextView
+             
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Repeat For Sync"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <TextView
+                            android:id="@+id/textViewSyncTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Small Text"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                      <SeekBar
+                        android:id="@+id/seekBarSync"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_weight="1" />
+                
+                    </LinearLayout>
+                </LinearLayout>
+
+                
+             
+            </LinearLayout>
+
+            
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFF00"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="100dp"
+                    android:text="Flipper Content 4"
+                    android:textColor="#000000"
+                    android:textSize="20dp" >
+                </TextView>
+            </RelativeLayout>
+        </ViewFlipper>
+  
+
+</RelativeLayout>
