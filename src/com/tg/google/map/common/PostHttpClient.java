@@ -16,11 +16,12 @@ import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -158,8 +159,9 @@ public class PostHttpClient extends AsyncTask<String, String, String> {
 				conn.setDoOutput(true);
 
 				conn.setRequestMethod("POST");
-				conn.setRequestProperty("Content-Type", "application/json");
+				conn.setRequestProperty("Content-Type", "application/json;charset=utf-8");
 				conn.setRequestProperty("Accept-Charset", charset);
+				 
 
 				conn.setReadTimeout(10000);
 				conn.setConnectTimeout(15000);
@@ -167,11 +169,16 @@ public class PostHttpClient extends AsyncTask<String, String, String> {
 				conn.connect();
 
 				paramsString = params;
+				
+				BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream(), "UTF-8"));
+				bw.write(paramsString);
+				bw.flush();
+				bw.close();
 
-				wr = new DataOutputStream(conn.getOutputStream());
+				/*wr = new DataOutputStream(conn.getOutputStream());
 				wr.writeBytes(paramsString);
 				wr.flush();
-				wr.close();
+				wr.close();*/
 				
 				int statusCode;
 				statusCode = conn.getResponseCode();

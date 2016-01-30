@@ -67,7 +67,7 @@ public class GcmMessageHandler extends IntentService {
         	//sendNotification(extras, messageType, request.getMessage());
         	ModelShareLocation shared =  new Gson().fromJson(request.getMessage(), ModelShareLocation.class);
         	//sendNotify();
-        	sendShareNotify("One Friend Request on GIS",shared,request.getEmail(),request.getMessage());
+        	sendShareNotify("I am here.",shared,request.getEmail(),request.getMessage());
         	Vibrator v = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
         	 // Vibrate for 500 milliseconds
         	 v.vibrate(500);
@@ -93,7 +93,7 @@ public class GcmMessageHandler extends IntentService {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_dialog_info)
                         .setContentTitle(title)
-                        .setContentText(content.getMessage());
+                        .setContentText(content.getMessage()  + " from " + email);
         int NOTIFICATION_ID = 12345;
 
         Intent targetIntent = new Intent(this, DialougeShareLocationActivity.class);

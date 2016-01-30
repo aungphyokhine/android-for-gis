@@ -3,8 +3,13 @@ package com.tg.google.map;
 import com.tg.google.map.FragmentCustom.OnFragmentStatusListener;
 import com.tg.google.map.common.DBHelper;
 import com.tg.google.map.common.ModelAppDataJson;
+import com.tg.google.map.common.ModelResult;
+import com.tg.google.map.common.OnResults;
+import com.tg.google.map.common.PostAsyncPublishLocation;
 import com.zcw.togglebutton.ToggleButton.OnToggleChanged;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
@@ -293,6 +298,68 @@ public class FragmentHome extends FragmentCustom {
 			@Override
 			public void onClick(View arg0) {
 				fragmentCallback.onChangeStatus(FRIEND_LIST);
+			}
+
+		});
+		
+		thisFragment.findViewById(R.id.imageViewPublishLocation).setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// get prompts.xml view
+				LayoutInflater li = LayoutInflater.from(getActivity());
+				View promptsView = li.inflate(R.layout.prompts, null);
+
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+						getActivity());
+
+				// set prompts.xml to alertdialog builder
+				alertDialogBuilder.setView(promptsView);
+
+				final EditText userInput = (EditText) promptsView
+						.findViewById(R.id.editTextDialogUserInput);
+
+				// set dialog message
+				alertDialogBuilder
+					.setCancelable(false)
+					.setPositiveButton("OK",
+					  new DialogInterface.OnClickListener() {
+					    public void onClick(DialogInterface dialog,int id) {
+						// get user input and set it to result
+						// edit text
+						//result.setText(userInput.getText());
+					    	
+					    	PostAsyncPublishLocation pl = new PostAsyncPublishLocation(getActivity(), new OnResults() {
+								
+								@Override
+								public void onTaskResult(ModelResult result) {
+									// TODO Auto-generated method stub
+									Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+									/*if(result.getSuccess()){
+										Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+									}
+									else{
+										Toast.makeText(getActivity(), result.getMessage(), Toast.LENGTH_SHORT).show();
+									}*/
+								}
+							});
+					    	
+					    	pl.execute(userInput.getText().toString());
+					    	
+					    }
+					  })
+					.setNegativeButton("Cancel",
+					  new DialogInterface.OnClickListener() {
+					    public void onClick(DialogInterface dialog,int id) {
+						dialog.cancel();
+					    }
+					  });
+
+				// create alert dialog
+				AlertDialog alertDialog = alertDialogBuilder.create();
+
+				// show it
+				alertDialog.show();
 			}
 
 		});

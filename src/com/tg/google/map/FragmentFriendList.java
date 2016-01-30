@@ -94,6 +94,7 @@ public class FragmentFriendList extends FragmentCustom{
 			        final List<ModelFriend> Friends = new ArrayList<ModelFriend>();	 
 			        final List<ModelFriend> Pendings = new ArrayList<ModelFriend>();	     
 			        final List<ModelFriend> Requests = new ArrayList<ModelFriend>();
+			        List<String> friendsforshare = new ArrayList<String>();
 					for(Iterator<ModelRequestInfo> i = data.getItems().iterator(); i.hasNext(); ) {
 						  ModelRequestInfo item = i.next();
 						  Log.d("item", item.getApproved() + "," + item.getFrom_uid() + "," + item.getTo_uid());
@@ -109,6 +110,7 @@ public class FragmentFriendList extends FragmentCustom{
 					        	if(item.getApproved()){
 					        		fritem.setStatus(FRIEND);
 						        	Friends.add(fritem);
+						        	friendsforshare.add(fritem.getEmail());
 						        }
 					        	else{
 					        		fritem.setStatus(PENDING);
@@ -129,7 +131,7 @@ public class FragmentFriendList extends FragmentCustom{
 					        }
 					        
 					  }
-			 
+					db.saveFriendsSTR(friendsforshare);
 			        listDataChild.put(listDataHeader.get(0), Friends); // Header, Child data
 			        listDataChild.put(listDataHeader.get(1), Pendings);
 			        listDataChild.put(listDataHeader.get(2), Requests);

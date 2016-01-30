@@ -56,7 +56,7 @@ public class DialougeShareLocationActivity extends Activity  {
 		LatLng latlng = new LatLng(shareloc.getLoc().get(1),shareloc.getLoc().get(0));
 		marker = new MarkerOptions()
 	                .position(latlng)
-	             .snippet(shareloc.getMessage())
+	             .snippet( email + ":" + shareloc.getMessage())
 	             .title("Time : " + new Date(shareloc.getDate() * 1000));
 		
 		setContentView(R.layout.dialouge_share_loc);

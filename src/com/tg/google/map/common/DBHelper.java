@@ -342,7 +342,20 @@ public class DBHelper extends SQLiteOpenHelper {
     	}
     	return new Gson().fromJson(lastloc, Location.class);
     }
+    public void saveFriendsSTR(List<String> friends){
+    	SharedPreferences sharedPref = this.currentcontext.getSharedPreferences("APP_SETTING", Context.MODE_PRIVATE);
+    	SharedPreferences.Editor editor = sharedPref.edit();   
+    	String friendsstr = new Gson().toJson(friends);
+    	editor.putString("FRIENDS_STR", friendsstr);
+    	editor.commit();
+    }
     
+    public String getFriendsSTR(){
+    	
+    	SharedPreferences sharedPref = this.currentcontext.getSharedPreferences("APP_SETTING", Context.MODE_PRIVATE);
+    	String friendstr = sharedPref.getString("FRIENDS_STR", "");	
+    	return friendstr;
+    }
     /*public void saveToken(String token){
     	SharedPreferences sharedPref = this.currentcontext.getSharedPreferences("APP_SETTING", Context.MODE_PRIVATE);
     	SharedPreferences.Editor editor = sharedPref.edit();
